@@ -106,7 +106,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 }else{
     $error = "Nama tidak valid";
 }
-}
 header("Location: form.php?" . "&error=" . urldecode($error));
+}
 exit();
 ?>
