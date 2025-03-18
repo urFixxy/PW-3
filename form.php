@@ -13,6 +13,7 @@ $email = isset($_GET['email']) ? $_GET['email'] : '';
 $homepage = isset($_GET['homepage']) ? $_GET['homepage'] : '';
 $hoby = isset($_GET['hoby']) ? $_GET['hoby'] : '';
 $interest = isset($_GET['interest']) ? $_GET['interest'] : '';
+$error = isset($_GET['error']) ? $_GET['error'] : '';
 ?>
 
 <!DOCTYPE html>
@@ -39,15 +40,15 @@ $interest = isset($_GET['interest']) ? $_GET['interest'] : '';
             <form action="data.php" method="POST" name="form1">
                 <div class="mb-2">
                     <label for="nama" class="form-label">Nama : </label>
-                    <input class="form-control" type="text" name="nama" id="nm" />
+                    <input class="form-control" type="text" name="nama" id="nama" placeholder="Masukkan nama"/>
                 </div>
                 <div class="mb-2">
                     <label for="nrp" class="form-label">NRP : </label>
-                    <input class="form-control" type="text" name="nrp" id="nrp" />
+                    <input class="form-control" type="text" name="nrp" id="nrp" placeholder="Masukkan NRP"/>
                 </div>
                 <div class="mb-2">
                     <label for="kelas" kelas="form-label">Kelas : </label>
-                    <input class="form-control" type="text" name="kelas" id="kelas" />
+                    <input class="form-control" type="text" name="kelas" id="kelas" placeholder="Masukkan kelas"/>
                 </div>
                 <div class="mb-2">
                     <label for="jk" class="form-label">Jenis Kelamin : </label>
@@ -77,36 +78,41 @@ $interest = isset($_GET['interest']) ? $_GET['interest'] : '';
                         <option value="Kepercayaan">Lainnya</option>
                     </select>
                 </div>
-                <div class="mb-2">
-                    <label for="ttl" class="form-label">Tempat / Tanggal Lahir : </label>
-                    <input class="form-control" type="text" name="ttl" id="ttl" title="Enter your date of birth" />
+                <div class="mb-2 row">
+                    <label for="tempat tanggal" class="form-label col-form-label">Tempat / Tanggal Lahir:</label>
+                    <div class="col-md-6">
+                        <input class="form-control" type="text" name="tempat" id="tempat" title="tempat" placeholder="Masukkan tempat lahir"/>
+                    </div>
+                    <div class="col-md-6">
+                        <input class="form-control" type="text" name="tanggal" id="tanggal" title="tanggal" placeholder="Masukkan tanggal lahir"/>
+                    </div>
                 </div>
                 <div class="mb-2">
                     <label for="alamat" class="form-label">Alamat : </label>
-                    <textarea class="form-control" name="alamat" id="alamat"></textarea>
+                    <textarea class="form-control" name="alamat" id="alamat" placeholder="Masukkan alamat"></textarea>
                 </div>
                 <div class="mb-2">
                     <label for="riwayat_pendidikan">Riwayat Pendidikan</label>
                     <div class="ms-5">
                         <label for="sd">SD : </label>
-                        <input class="form-control" type="text" name="sd" id="riwayat_pendidikan" />
+                        <input class="form-control" type="text" name="sd" id="riwayat_pendidikan" placeholder="Masukkan nama SD"/>
                         <label for="smp">SMP : </label>
-                        <input class="form-control" type="text" name="smp" id="riwayat_pendidikan" />
+                        <input class="form-control" type="text" name="smp" id="riwayat_pendidikan" placeholder="Masukkan nama SMP"/>
                         <label for="sma">SMA : </label>
-                        <input class="form-control" type="text" name="sma" id="riwayat_pendidikan" />
+                        <input class="form-control" type="text" name="sma" id="riwayat_pendidikan" placeholder="Masukkan nama SMA"/>
                     </div>
                 </div>
                 <div class="mb-2">
                     <label for="email" class="form-label">Email : </label>
-                    <input class="form-control" type="email" name="email" id="email" />
+                    <input class="form-control" type="email" name="email" id="email" placeholder="Masukkan email"/>
                 </div>
                 <div class="mb-2">
                     <label for="hp" class="form-label">Homepage : </label>
-                    <input class="form-control" type="text" name="hp" id="hp" />
+                    <input class="form-control" type="email" name="hp" id="hp" placeholder="Masukkan homepage"/>
                 </div>
                 <div class="mb-2">
                     <label for="hobi" class="form-label">Hobi : </label>
-                    <textarea class="form-control" name="hobi" id="hobi"></textarea>
+                    <textarea class="form-control" name="hobi" id="hobi" placeholder="Masukkan hobi"></textarea>
                 </div>
                 <div class="mb-2">
                     <label for="interest" class="form-label">Interest : </label>
@@ -166,7 +172,8 @@ $interest = isset($_GET['interest']) ? $_GET['interest'] : '';
                 Email : <?php echo htmlspecialchars($email); ?><br>
                 Homepage : <?php echo htmlspecialchars($homepage); ?><br>
                 Hobi : <?php echo htmlspecialchars($hoby); ?><br>
-                Interest : <?php echo htmlspecialchars($interest); ?>
+                Interest : <?php echo htmlspecialchars($interest); ?><br>
+                <?php echo htmlspecialchars($error); ?>
             </div>
         </div>
     </section>
